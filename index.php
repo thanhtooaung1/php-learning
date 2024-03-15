@@ -1,38 +1,14 @@
 <?php
 
-// Functions and variable scopes
+// require ,include and their difference
 
-//// function without argument
-// function greet()
-// {
-//     echo "Good morining Sir";
-// }
+// require('ninjas.php');
+// include('ninjas.php');
 
-//// function with argument
-// function greet($name)
-// {
-//     echo "Good moring, $name";
-// }
+require 'ninjas.php';
+include 'ninjas.php';
 
-$name = "mario";
-
-//// global variable in function
-// function greet()
-// {
-//     global $name;
-//     $name = "gario";
-//     echo "Good morning $name <br/>";
-// }
-
-//// function with pass by reference parameter
-function greet(&$name)
-{
-    $name = 'gario';
-    echo "Good morning $name <br/>";
-}
-
-greet($name);
-echo $name;
+echo 'end of php';
 
 ?>
 
@@ -46,7 +22,9 @@ echo $name;
 </head>
 
 <body>
-
+    <?php include('content.php'); ?>
+    <?php include('content.php'); ?>
+    <?php include('content.php'); ?>
 </body>
 
 </html>
