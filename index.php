@@ -1,5 +1,5 @@
 <?php
-// conditional statements
+// break and continue
 
 $products = [
     ['name' => 'Lenovo', 'price' => '2000000'],
@@ -9,12 +9,18 @@ $products = [
     ['name' => 'DELL', 'price' => '2000000'],
 ];
 
-// foreach ($products as $product) {
-//     if ($product['price'] < 3000000) {
-//         echo $product['name'] . ' => ' . $product['price'];
-//         echo '<br />';
-//     }
-// }
+foreach ($products as $product) {
+    if ($product['name'] === 'HP') {
+        break;
+    }
+
+    if ($product['name'] === 'ASUS') {
+        continue;
+    }
+
+    echo $product['name'] . ' => ' . $product['price'];
+    echo '<br />';
+}
 
 ?>
 
@@ -28,15 +34,7 @@ $products = [
 </head>
 
 <body>
-    <h1>Products</h1>
-    <ul>
-        <?php foreach ($products as $product) { ?>
-            <?php if ($product['price'] < 3000000) { ?>
-                <li><?= $product['name'] ?></li>
-            <?php } ?>
-        <?php } ?>
 
-    </ul>
 </body>
 
 </html>
