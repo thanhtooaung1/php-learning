@@ -1,26 +1,38 @@
 <?php
-// break and continue
 
-$products = [
-    ['name' => 'Lenovo', 'price' => '2000000'],
-    ['name' => 'ASUS', 'price' => '3000000'],
-    ['name' => 'Acer', 'price' => '3200000'],
-    ['name' => 'HP', 'price' => '2500000'],
-    ['name' => 'DELL', 'price' => '2000000'],
-];
+// Functions and variable scopes
 
-foreach ($products as $product) {
-    if ($product['name'] === 'HP') {
-        break;
-    }
+//// function without argument
+// function greet()
+// {
+//     echo "Good morining Sir";
+// }
 
-    if ($product['name'] === 'ASUS') {
-        continue;
-    }
+//// function with argument
+// function greet($name)
+// {
+//     echo "Good moring, $name";
+// }
 
-    echo $product['name'] . ' => ' . $product['price'];
-    echo '<br />';
+$name = "mario";
+
+//// global variable in function
+// function greet()
+// {
+//     global $name;
+//     $name = "gario";
+//     echo "Good morning $name <br/>";
+// }
+
+//// function with pass by reference parameter
+function greet(&$name)
+{
+    $name = 'gario';
+    echo "Good morning $name <br/>";
 }
+
+greet($name);
+echo $name;
 
 ?>
 
